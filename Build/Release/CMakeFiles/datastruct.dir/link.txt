@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/datastruct.dir/main.cpp.o  -o datastruct  Source/libdatastruct_library.a 

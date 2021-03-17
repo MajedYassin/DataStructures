@@ -156,33 +156,6 @@ datastruct_library/fast:
 	$(MAKE) $(MAKESILENT) -f Source/CMakeFiles/datastruct_library.dir/build.make Source/CMakeFiles/datastruct_library.dir/build
 .PHONY : datastruct_library/fast
 
-Source/DataStructures.o: Source/DataStructures.cpp.o
-
-.PHONY : Source/DataStructures.o
-
-# target to build an object file
-Source/DataStructures.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructures.dir/build.make CMakeFiles/DataStructures.dir/Source/DataStructures.cpp.o
-.PHONY : Source/DataStructures.cpp.o
-
-Source/DataStructures.i: Source/DataStructures.cpp.i
-
-.PHONY : Source/DataStructures.i
-
-# target to preprocess a source file
-Source/DataStructures.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructures.dir/build.make CMakeFiles/DataStructures.dir/Source/DataStructures.cpp.i
-.PHONY : Source/DataStructures.cpp.i
-
-Source/DataStructures.s: Source/DataStructures.cpp.s
-
-.PHONY : Source/DataStructures.s
-
-# target to generate assembly for a file
-Source/DataStructures.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructures.dir/build.make CMakeFiles/DataStructures.dir/Source/DataStructures.cpp.s
-.PHONY : Source/DataStructures.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -220,9 +193,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... DataStructures"
 	@echo "... datastruct_library"
-	@echo "... Source/DataStructures.o"
-	@echo "... Source/DataStructures.i"
-	@echo "... Source/DataStructures.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

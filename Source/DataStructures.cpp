@@ -3,27 +3,34 @@
 
 
 namespace DataStruct {
-
-    int LinkedList::get(int index)
+    template<typename T>
+    T LinkedList<T>::get(int index)
     {
         if(index < 0 || index >= size) return -1;
         else if(index == 0) return head->val;
         else
         {
-            ListNode* indexNode = head;
+            ListNode<T>* indexNode = head;
 
             for(int i = 0; i < index; ++i)
             {
-                ListNode* tempNode = indexNode->next;
+                ListNode<T>* tempNode = indexNode->next;
                 indexNode = tempNode;
             }
             return (indexNode->val);
         }
     }
 
-    void LinkedList::addAtHead(int val)
+    template<typename T>
+    int LinkedList<T>::len()
     {
-        ListNode* newNode = new ListNode();
+        return size;
+    }
+
+    template<typename T>
+    void LinkedList<T>::addAtHead(T val)
+    {
+        ListNode<T>* newNode = new ListNode<T>();
         newNode->val = val;
 
         if(!head) newNode->next = head;
@@ -33,9 +40,10 @@ namespace DataStruct {
         ++size;
     }
 
-    void LinkedList::addAtTail(int val)
+    template<typename T>
+    void LinkedList<T>::addAtTail(T val)
     {
-        listNode* newNode = new ListNode();
+        ListNode<T>* newNode = new ListNode<T>();
         newNode->val = val;
 
         if(!tail)
@@ -52,7 +60,8 @@ namespace DataStruct {
         ++size;
     }
 
-    bool LinkedList::addAtIndex(int index, int val)
+    template<typename T>
+    bool LinkedList<T>::addAtIndex(int index, T val)
     {
         // check if valid index  and return false if not valid
         if(index < 0 || index > size) return false;
@@ -68,13 +77,13 @@ namespace DataStruct {
         }
         else
         {
-            ListNode* newNode = new ListNode();
+            ListNode<T>* newNode = new ListNode<T>();
             newNode->val = val;
-            ListNode* indexNode = head;
+            ListNode<T>* indexNode = head;
 
             for(int i = 0; i < (index - 1); ++i)
             {
-                ListNode* tempNode = indexNode->next;
+                ListNode<T>* tempNode = indexNode->next;
                 indexNode = tempNode;
             }
 
@@ -86,12 +95,13 @@ namespace DataStruct {
     }
 
 
-    bool LinkedList::deleteAtIndex(int index)
+    template<typename T>
+    bool LinkedList<T>::deleteAtIndex(int index)
     {
         // check if valid index  and return false if not valid
         if(index < 0 || index >= size) return false;
 
-        ListNode* indexNode = head;
+        ListNode<T>* indexNode = head;
         int i = 0;
         while(i < (index - 1))
         {
@@ -120,13 +130,33 @@ namespace DataStruct {
         }
         else
         {
-            ListNode* tempNode = indexNode->next->next;
+            ListNode<T>* tempNode = indexNode->next->next;
             delete indexNode->next;
             indexNode->next = tempNode;
         }
 
         --size;
         return true; 
+    }
+
+    template<typename T>
+    LinkedList<T>::LinkedList() : head(nullptr), tail(nullptr)
+    {
+        size = 0;
+    }
+
+    template<typename T>
+    LinkedList<T>::LinkedList(int num, T arg, ...) : head(nullptr), tail(nullptr)
+    {
+        size = 0;
+        va_list arguments;
+        addAtTail(arg);
+        va_start(arguments, arg);
+        for( int i = 0; i < (num - 1); ++i)
+        {
+            addAtTail(va_arg(arguments, T));
+        }
+        va_end(arguments);
     }
 
 }

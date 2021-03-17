@@ -3,8 +3,6 @@ project(DataStructures)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DataStructures main.cpp Source/DataStructures.h Source/DataStructures.cpp)
-
 include(FetchContent)
 
 FetchContent_declare(
@@ -13,7 +11,10 @@ FetchContent_declare(
     GIT_TAG release-1.8.0
 )
 
+include_directories(Source)
 add_subdirectory(Source)
+add_executable(DataStructures main.cpp)
+target_link_libraries(DataStructures datastruct_library)
 
 
 

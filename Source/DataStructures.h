@@ -3,37 +3,44 @@
 #ifndef DATASTRUCTURES_DATASTRUCTURES_H
 #define DATASTRUCTURES_DATASTRUCTURES_H
 
+#include  <cstdarg>
+
 namespace DataStruct {
 
 // Linked List
+    template<typename T>
     struct ListNode {
-        int val;
+        T val;
         ListNode *next;
         ListNode *prev;
 
-        ListNode(int x) : val(x), next(nullptr), prev(nullptr) {}
+        ListNode(T x) : val(x), next(nullptr), prev(nullptr) {}
         ListNode() : val(0), next(nullptr), prev(nullptr) {}
     };
 
+    template<typename T>
     class LinkedList {
 
         // properties
         int size;
-        ListNode *head, *tail;
+        ListNode<T> *head, *tail;
 
     public:
 
         LinkedList();
 
+        LinkedList(int num, T arg, ...);
+
         // member functions
-        int get(int index);
-        void addAtHead(int val);
-        void addAtTail(int val);
-        bool addAtIndex(int index, int val);
+        T get(int index);
+        void addAtHead(T val);
+        void addAtTail(T val);
+        bool addAtIndex(int index, T val);
         bool deleteAtIndex(int index);
+        int len();
 
         bool hasCycle();
-        ListNode* detectCycle
+        ListNode<T>* detectCycle();
 
     };
 
