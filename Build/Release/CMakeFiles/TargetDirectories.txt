@@ -1,6 +1,0 @@
-/home/majed/CLionProjects/DataStructures/Build/Release/CMakeFiles/rebuild_cache.dir
-/home/majed/CLionProjects/DataStructures/Build/Release/CMakeFiles/edit_cache.dir
-/home/majed/CLionProjects/DataStructures/Build/Release/CMakeFiles/DataStructures.dir
-/home/majed/CLionProjects/DataStructures/Build/Release/Source/CMakeFiles/rebuild_cache.dir
-/home/majed/CLionProjects/DataStructures/Build/Release/Source/CMakeFiles/edit_cache.dir
-/home/majed/CLionProjects/DataStructures/Build/Release/Source/CMakeFiles/datastruct_library.dir

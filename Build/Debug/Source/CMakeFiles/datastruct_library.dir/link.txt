@@ -1,2 +1,0 @@
-/usr/bin/ar qc libdatastruct_library.a  CMakeFiles/datastruct_library.dir/DataStructures.cpp.o
-/usr/bin/ranlib libdatastruct_library.a
