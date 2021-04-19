@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../Source/DataStructures.cpp
+DataStructures.h
+../../Source/DataStructures.h
+
+../../Source/DataStructures.h
+cstdarg
+-
+
+/home/majed/CLionProjects/DataStructures/main.cpp
+iostream
+-
+DataStructures.cpp
+/home/majed/CLionProjects/DataStructures/DataStructures.cpp
+

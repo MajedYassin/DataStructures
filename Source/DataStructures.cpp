@@ -3,6 +3,8 @@
 
 
 namespace DataStruct {
+
+    // Linked List
     template<typename T>
     T LinkedList<T>::get(int index)
     {
@@ -157,6 +159,104 @@ namespace DataStruct {
             addAtTail(va_arg(arguments, T));
         }
         va_end(arguments);
+    }
+
+    // Binary Search Functions
+    TreeNode* BinarySearchTree::searchNode(TreeNode* node, int val)
+    {
+        // should be root if you want to search whole tree
+        if(!node) return nullptr;
+        else if(node->val == val)
+        {
+            return node;
+        }
+        else if(node->val > val)
+        {
+            return searchNode(node->leftChildNode, val);
+        }
+        else if(node->val < val)
+        {
+            return searchNode(node->rightChildNode, val);
+        }
+
+    }
+
+    TreeNode* BinarySearchTree::search(int val)
+    {
+        return searchNode(root, val);
+    }
+
+
+
+    bool BinarySearchTree::insertNode(int val)
+    {
+        TreeNode* parent = nullptr;
+        TreeNode* current = root;
+
+        while(current)
+        {
+            parent = current;
+            if(current->val == val)
+            {
+                // cannot accept duplicates
+                return false;
+            }
+            else if(current->val > val)
+            {
+                current = current->rightChildNode;
+            }
+            else if(current->val < val)
+            {
+                current = current->leftChildNode;
+            }
+
+        }
+
+        TreeNode* node = new TreeNode;
+        node->leftChildNode = nullptr;
+        node->rightChildNode = nullptr;
+        node->val = val;
+        current = node;
+        return true;
+    }
+
+    bool BinarySearchTree::deleteNode(int val)
+    {
+        TreeNode* parent = nullptr;
+        TreeNode* current = root;
+
+        while(current)
+        {
+            if(current->val == val)
+            {
+                // cannot accept duplicates
+                if(current->leftChildNode)
+                {
+                    if(current == parent->leftChildNode)
+                    {
+
+                    }
+
+                }
+
+                delete current;
+
+            }
+
+            parent = current;
+            if(current->val > val)
+            {
+                current = current->rightChildNode;
+            }
+            else if(current->val < val)
+            {
+                current = current->leftChildNode;
+            }
+
+        }
+
+        return false;
+
     }
 
 }

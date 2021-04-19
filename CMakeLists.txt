@@ -13,7 +13,7 @@ FetchContent_declare(
 
 include_directories(Source)
 add_subdirectory(Source)
-add_executable(DataStructures main.cpp)
+add_executable(DataStructures main.cpp Test/LinkedListTests.cpp)
 target_link_libraries(DataStructures datastruct_library)
 
 

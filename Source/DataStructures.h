@@ -45,5 +45,40 @@ namespace DataStruct {
     };
 
 
+    // Binary Search Tree
+    struct TreeNode{
+        int val;
+
+        // parent node not always implemented in singly linked tree nodes
+        // treeNode* parentNode;
+        TreeNode* leftChildNode;
+        TreeNode* rightChildNode;
+
+    };
+
+
+    class BinarySearchTree{
+
+        // properties
+        int size;
+        TreeNode *root;
+
+        TreeNode* searchNode(TreeNode* node, int val);
+
+    public:
+
+        BinarySearchTree();
+
+        BinarySearchTree(int num, T arg, ...);
+
+        // member functions
+        TreeNode* search(int val);
+        bool insertNode(int val);
+        bool deleteNode(int val);
+        int len();
+
+    };
+
+
 }
 #endif //DATASTRUCTURES_DATASTRUCTURES_H

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/DataStructures.dir/main.cpp.o CMakeFiles/DataStructures.dir/Test/LinkedListTests.cpp.o  -o DataStructures  Source/libdatastruct_library.a 
